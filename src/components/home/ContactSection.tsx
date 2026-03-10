@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock, MessageSquare, CheckCircle2 } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 
-export default function ContactSection() {
+function ContactSectionInner() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [selectedCourse, setSelectedCourse] = useState("");
     const searchParams = useSearchParams();
@@ -240,5 +240,13 @@ export default function ContactSection() {
                 </motion.div>
             </div>
         </section>
+    );
+}
+
+export default function ContactSection() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <ContactSectionInner />
+        </Suspense>
     );
 }
