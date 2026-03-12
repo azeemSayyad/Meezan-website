@@ -14,9 +14,12 @@ export default function Footer() {
                                 <div className="relative w-[180px] h-[70px]">
                                     <Image
                                         src="/images/meezan-logo.png"
-                                        alt="Meezan Educational Institute"
-                                        fill
+                                        alt="Meezan Educational Institute logo at Meezan Educational Institute Hyderabad"
+                                        width={180}
+                                        height={70}
                                         className="object-contain"
+                                        loading="lazy"
+                                        priority={false}
                                     />
                                 </div>
                             </div>
@@ -43,15 +46,17 @@ export default function Footer() {
                     {/* Col 2 */}
                     <div>
                         <h3 className="text-lg font-semibold mb-6 text-white border-b border-white/20 pb-2 inline-block">Quick Links</h3>
-                        <ul className="space-y-4">
-                            {['Home', 'Courses', 'About', 'Blog', 'Contact'].map((link) => (
-                                <li key={link}>
-                                    <Link href={link === 'Home' ? '/' : `/${link.toLowerCase()}`} className="text-white/80 hover:text-brand-teal transition-colors inline-block text-sm">
-                                        {link}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
+                        <nav aria-label="Footer quick links">
+                            <ul className="space-y-4">
+                                {['Home', 'Courses', 'About', 'Blog', 'Contact'].map((link) => (
+                                    <li key={link}>
+                                        <Link href={link === 'Home' ? '/' : `/${link.toLowerCase()}`} className="text-white/80 hover:text-brand-teal transition-colors inline-block text-sm">
+                                            {link}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </nav>
                     </div>
 
                     {/* Col 3 */}
@@ -60,9 +65,9 @@ export default function Footer() {
                         <address className="not-italic text-white/80 space-y-4 text-sm">
                             <p>201, Second Floor, Dorato Avenue,<br />Hyderabad, India</p>
                             <div className="space-y-2">
-                                <p><a href="tel:+917730019572" className="hover:text-brand-teal transition-colors">+91 77300 19572</a></p>
-                                <p><a href="tel:+919010186447" className="hover:text-brand-teal transition-colors">+91 9010186447</a></p>
-                                <p><a href="tel:+914045131341" className="hover:text-brand-teal transition-colors">040 45131341</a></p>
+                                <p><a href="tel:+917730019572" className="hover:text-brand-teal transition-colors" aria-label="Call +91 77300 19572">+91 77300 19572</a></p>
+                                <p><a href="tel:+919010186447" className="hover:text-brand-teal transition-colors" aria-label="Call +91 9010186447">+91 9010186447</a></p>
+                                <p><a href="tel:+914045131341" className="hover:text-brand-teal transition-colors" aria-label="Call 040 45131341">040 45131341</a></p>
                             </div>
                             <p>Mon–Sat, 09:00 am – 08:00 pm</p>
                             <a
@@ -70,6 +75,7 @@ export default function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-block mt-4 bg-[#25D366] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#1EBE5D] transition-colors shadow-sm"
+                                aria-label="Chat with us on WhatsApp"
                             >
                                 Chat on WhatsApp
                             </a>

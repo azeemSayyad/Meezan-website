@@ -83,7 +83,7 @@ function ContactSectionInner() {
     };
 
     return (
-        <section className="py-24 bg-white" id="contact">
+        <section className="py-24 bg-white" id="contact" aria-labelledby="contact-heading">
             <div id="enquiry-form" className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
 
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
@@ -95,15 +95,15 @@ function ContactSectionInner() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
                     >
-                        <h2 className="mb-4 text-2xl md:text-3xl lg:text-4xl text-brand-deeper-teal">Get In Touch</h2>
+                        <h2 id="contact-heading" className="mb-4 text-2xl md:text-3xl lg:text-4xl text-brand-deeper-teal">Get In Touch</h2>
                         <p className="text-foreground/70 text-base md:text-lg mb-10">We're here to answer your questions and help you build your future. Reach out to us today.</p>
 
-                        <div className="space-y-8 mb-10">
+                        <address className="not-italic space-y-8 mb-10">
                             <div className="flex gap-4">
                                 <div className="bg-brand-light p-3 rounded-full text-brand-teal h-fit shrink-0">
                                     <MapPin size={24} />
                                 </div>
-                                <div>
+                                <div className="not-italic">
                                     <h4 className="font-semibold text-brand-deeper-teal mb-1 text-lg">Our Location</h4>
                                     <p className="text-foreground/70">201, Second Floor, Dorato Avenue<br />Hyderabad, India</p>
                                     <a href="https://maps.app.goo.gl/uX3L3bQXWq5y5b5x9" target="_blank" rel="noopener noreferrer" className="text-brand-teal text-sm font-semibold mt-2 inline-block hover:underline">Get Directions</a>
@@ -114,12 +114,12 @@ function ContactSectionInner() {
                                 <div className="bg-brand-light p-3 rounded-full text-brand-teal h-fit shrink-0">
                                     <Phone size={24} />
                                 </div>
-                                <div>
+                                <div className="not-italic">
                                     <h4 className="font-semibold text-brand-deeper-teal mb-1 text-lg">Phone Numbers</h4>
                                     <p className="text-foreground/70 mb-2">Before visiting please call us at:</p>
-                                    <p className="font-medium hover:text-brand-teal transition-colors"><a href="tel:+917730019572">+91 77300 19572</a></p>
-                                    <p className="font-medium hover:text-brand-teal transition-colors"><a href="tel:+919010186447">+91 9010186447</a></p>
-                                    <p className="font-medium hover:text-brand-teal transition-colors"><a href="tel:04045131341">040-45131341</a></p>
+                                    <p className="font-medium hover:text-brand-teal transition-colors"><a href="tel:+917730019572" aria-label="Call +91 77300 19572">+91 77300 19572</a></p>
+                                    <p className="font-medium hover:text-brand-teal transition-colors"><a href="tel:+919010186447" aria-label="Call +91 9010186447">+91 9010186447</a></p>
+                                    <p className="font-medium hover:text-brand-teal transition-colors"><a href="tel:04045131341" aria-label="Call 040-45131341">040-45131341</a></p>
                                 </div>
                             </div>
 
@@ -127,16 +127,16 @@ function ContactSectionInner() {
                                 <div className="bg-brand-light p-3 rounded-full text-brand-teal h-fit shrink-0">
                                     <Clock size={24} />
                                 </div>
-                                <div>
+                                <div className="not-italic">
                                     <h4 className="font-semibold text-brand-deeper-teal mb-1 text-lg">Working Hours</h4>
                                     <p className="text-foreground/70">Monday – Saturday</p>
                                     <p className="font-medium text-foreground">09:00 AM – 08:00 PM</p>
                                 </div>
                             </div>
-                        </div>
+                        </address>
 
                         <div className="flex gap-4">
-                            <a href="https://wa.me/917730019572" className="flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1ebe5d] transition-colors shadow-sm">
+                            <a href="https://wa.me/917730019572" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1ebe5d] transition-colors shadow-sm" aria-label="Chat with us on WhatsApp">
                                 <MessageSquare size={18} /> WhatsApp Us
                             </a>
                         </div>

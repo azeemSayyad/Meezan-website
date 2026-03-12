@@ -22,7 +22,7 @@ export default function FloatingElements() {
             <a
                 href="tel:+919010186447"
                 className="fixed bottom-20 left-6 z-50 bg-brand-teal text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-transform duration-300 md:hidden flex items-center justify-center"
-                aria-label="Call Now"
+                aria-label="Call Meezan Educational Institute"
             >
                 <Phone size={24} />
             </a>

@@ -73,7 +73,7 @@ export default function BlogPage() {
             {/* HERO */}
             <section className="bg-brand-light pt-24 pb-12 md:pb-16 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-                    <h1 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-brand-deeper-teal mb-6">Insights, Tips & Updates</h1>
+                    <h1 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-brand-deeper-teal mb-6">Healthcare & Education Blog — Meezan Institute</h1>
                     <p className="text-base md:text-lg text-foreground/70 max-w-2xl mb-10">
                         Stay informed with the latest thought leadership, course news, and career advice from Meezan Educational Institute.
                     </p>
@@ -96,10 +96,11 @@ export default function BlogPage() {
                         <div className="w-full lg:w-3/5 h-[250px] sm:h-[350px] lg:h-[450px] relative overflow-hidden">
                             <Image
                                 src={featuredPost.image}
-                                alt={featuredPost.title}
+                                alt={`Featured post: ${featuredPost.title}`}
                                 fill
                                 className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                priority
+                                priority={true}
+                                sizes="(max-width: 1024px) 100vw, 60vw"
                             />
                         </div>
                         <div className="w-full lg:w-2/5 p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
@@ -125,19 +126,21 @@ export default function BlogPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {gridPosts.map((post) => (
                         <Link href={`/blog/${post.slug}`} key={post.slug} className="group flex flex-col h-full">
-                            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border group-hover:shadow-lg transition-all duration-300 flex flex-col flex-1">
-                                <div className="relative h-48 sm:h-56 w-full overflow-hidden">
-                                    <span className="absolute top-4 left-4 z-10 bg-brand-accent text-brand-deeper-teal font-bold tracking-wide text-[10px] px-3 py-1 rounded-md shadow-sm uppercase">
-                                        {post.category}
-                                    </span>
-                                    <Image
-                                        src={post.image}
-                                        alt={post.title}
-                                        fill
-                                        loading="lazy"
-                                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                </div>
+                                <article className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border group-hover:shadow-lg transition-all duration-300 flex flex-col flex-1">
+                                    <div className="relative h-48 sm:h-56 w-full overflow-hidden">
+                                        <span className="absolute top-4 left-4 z-10 bg-brand-accent text-brand-deeper-teal font-bold tracking-wide text-[10px] px-3 py-1 rounded-md shadow-sm uppercase">
+                                            {post.category}
+                                        </span>
+                                        <Image
+                                            src={post.image}
+                                            alt={post.title}
+                                            fill
+                                            loading="lazy"
+                                            priority={false}
+                                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        />
+                                    </div>
                                 <div className="p-6 md:p-8 flex flex-col flex-1">
                                     <h3 className="text-xl font-bold text-brand-deeper-teal mb-3 leading-snug group-hover:text-brand-teal transition-colors line-clamp-2">
                                         {post.title}
@@ -154,8 +157,8 @@ export default function BlogPage() {
                                             Read More <ArrowRight size={14} />
                                         </span>
                                     </div>
-                                </div>
-                            </div>
+                                    </div>
+                                </article>
                         </Link>
                     ))}
                 </div>

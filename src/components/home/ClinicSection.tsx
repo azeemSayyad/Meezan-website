@@ -6,7 +6,7 @@ import { Phone, CheckCircle } from "lucide-react";
 
 export default function ClinicSection() {
     return (
-        <section className="relative py-12 md:py-16 lg:py-20 bg-gradient-to-br from-brand-deeper-teal to-[#1a1a2e] overflow-hidden">
+        <section className="relative py-12 md:py-16 lg:py-20 bg-gradient-to-br from-brand-deeper-teal to-[#1a1a2e] overflow-hidden" aria-labelledby="clinic-heading">
             {/* Background Decor */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-teal/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-accent/10 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/4 pointer-events-none" />
@@ -22,7 +22,7 @@ export default function ClinicSection() {
                     className="w-full lg:w-3/5 text-white"
                 >
                     <div className="w-16 h-1 bg-brand-accent mb-8 rounded-full" />
-                    <h2 className="text-white mb-3 text-4xl lg:text-5xl">Shoukath Ali Charitable Clinic</h2>
+                    <h2 id="clinic-heading" className="text-white mb-3 text-4xl lg:text-5xl">Shoukath Ali Charitable Clinic</h2>
                     <p className="text-brand-accent text-lg font-medium mb-10 tracking-wide uppercase text-sm">
                         A Humanitarian Initiative of Meezan Paramedic Institute
                     </p>
@@ -40,24 +40,24 @@ export default function ClinicSection() {
                         ))}
                     </div>
 
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8 backdrop-blur-sm">
+                    <address className="bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8 backdrop-blur-sm not-italic">
                         <h3 className="text-white text-xl mb-6 flex items-center gap-3 border-b border-white/10 pb-4">
                             <Phone className="text-brand-teal" /> Contact & Appointments
                         </h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                            <div>
+                            <div className="not-italic">
                                 <p className="text-white/60 text-sm mb-1">Helpline Numbers</p>
-                                <p className="font-semibold text-lg hover:text-brand-accent transition-colors"><a href="tel:+918897594925">8897594925</a></p>
-                                <p className="font-semibold text-lg hover:text-brand-accent transition-colors"><a href="tel:04045131341">040-45131341</a></p>
+                                <p className="font-semibold text-lg hover:text-brand-accent transition-colors"><a href="tel:+918897594925" aria-label="Call 8897594925">8897594925</a></p>
+                                <p className="font-semibold text-lg hover:text-brand-accent transition-colors"><a href="tel:04045131341" aria-label="Call 040-45131341">040-45131341</a></p>
                             </div>
-                            <div>
+                            <div className="not-italic">
                                 <p className="text-white/60 text-sm mb-1">Clinic Credentials</p>
                                 <p className="font-medium text-sm leading-relaxed text-white/90">
                                     M.sc Clinical Psychology | M.sc Child Psychology | M.sc Nursing Psychology | NNF
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </address>
                 </motion.div>
 
                 {/* Right Image */}

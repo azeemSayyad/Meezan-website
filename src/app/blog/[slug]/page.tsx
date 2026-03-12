@@ -17,17 +17,18 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     const title = params.slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
     return (
-        <div className="w-full bg-white pb-24">
+        <article className="w-full bg-white pb-24">
 
             {/* HERO IMAGE */}
             <div className="relative w-full h-[400px] lg:h-[500px] overflow-hidden">
                 {/* Placeholder generic image, would be dynamic based on slug */}
                 <Image
                     src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80"
-                    alt={title}
+                    alt={`Meezan Blog: ${title}`}
                     fill
-                    priority
+                    priority={true}
                     className="object-cover"
+                    sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-brand-deeper-teal/60 backdrop-blur-[2px]" />
 
@@ -53,9 +54,9 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </div>
 
             {/* ARTICLE BODY */}
-            <article className="max-w-3xl mx-auto px-4 py-16 lg:py-24 prose prose-lg prose-slate prose-headings:text-brand-deeper-teal prose-a:text-brand-teal prose-img:rounded-2xl">
+            <div className="max-w-3xl mx-auto px-4 py-16 lg:py-24 prose prose-lg prose-slate prose-headings:text-brand-deeper-teal prose-a:text-brand-teal prose-img:rounded-2xl">
 
-                <Link href="/blog" className="inline-flex items-center gap-2 text-brand-teal font-semibold hover:text-brand-dark-teal transition-colors mb-10 no-underline text-sm">
+                <Link href="/blog" className="inline-flex items-center gap-2 text-brand-teal font-semibold hover:text-brand-dark-teal transition-colors mb-10 no-underline text-sm" aria-label="Back to all blog articles">
                     <ArrowLeft size={16} /> Back to all articles
                 </Link>
 
@@ -96,7 +97,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                         </span>
                     ))}
                 </div>
-            </article>
+            </div>
 
             {/* CTA STRIP */}
             <section className="bg-brand-deeper-teal border-t border-[#1a1a2e] py-16 text-center text-white px-4">
@@ -112,6 +113,6 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                 </div>
             </section>
 
-        </div>
+        </article>
     );
 }

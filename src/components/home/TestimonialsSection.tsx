@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
     const duplicatedTestimonials = [...testimonials, ...testimonials];
 
     return (
-        <section className="py-24 bg-brand-light overflow-hidden">
+        <section className="py-24 bg-brand-light overflow-hidden" aria-labelledby="testimonials-heading">
             <div className="max-w-7xl mx-auto px-4 mb-16 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h2 className="mb-4">What Our Students Say</h2>
+                    <h2 id="testimonials-heading" className="mb-4">What Our Students Say</h2>
                     <p className="text-lg text-foreground/70">Real results from real people who transformed their careers.</p>
                 </motion.div>
             </div>

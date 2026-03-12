@@ -142,7 +142,7 @@ export default function CoursesPage() {
                     transition={{ duration: 0.6 }}
                     className="relative z-10 max-w-3xl mx-auto"
                 >
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl text-white mb-6">Explore All Our Programmes</h1>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl text-white mb-6">Courses at Meezan Educational Institute Hyderabad</h1>
                     <p className="text-lg text-white/80 max-w-xl mx-auto mb-12">From healthcare to technology — find the course that launches your career and transforms your life.</p>
 
                     <div className="flex flex-nowrap overflow-x-auto pb-4 justify-start md:justify-center gap-2 md:gap-4 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
@@ -161,7 +161,7 @@ export default function CoursesPage() {
 
             {/* Courses Loop */}
             {courseCategories.map((category, index) => (
-                <section key={category.id} id={category.id} className={`py-12 md:py-16 lg:py-20 ${category.bg} scroll-mt-20`}>
+                <section key={category.id} id={category.id} className={`py-12 md:py-16 lg:py-20 ${category.bg} scroll-mt-20`} aria-labelledby={`${category.id}-heading`}>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -170,18 +170,14 @@ export default function CoursesPage() {
                             transition={{ duration: 0.5 }}
                             className="mb-12 md:mb-16 text-center max-w-2xl mx-auto"
                         >
-                            <h2 className="mb-4 text-3xl md:text-4xl">{category.title}</h2>
+                            <h2 id={`${category.id}-heading`} className="mb-4 text-3xl md:text-4xl">{category.title}</h2>
                             <p className="text-lg text-foreground/70">{category.description}</p>
                         </motion.div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                             {category.courses.map((course, i) => (
-                                <motion.div
+                                <article
                                     key={course.title}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: "-50px" }}
-                                    transition={{ duration: 0.5, delay: i * 0.1 }}
                                     className="bg-white rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col"
                                 >
                                     <div className="relative h-48 w-full overflow-hidden bg-brand-light">
@@ -195,10 +191,12 @@ export default function CoursesPage() {
                                         </div>
                                         <Image
                                             src={course.image}
-                                            alt={course.title}
+                                            alt={`${course.title} at Meezan Educational Institute Hyderabad`}
                                             fill
                                             loading="lazy"
+                                            priority={false}
                                             className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                         />
                                     </div>
 
@@ -221,7 +219,7 @@ export default function CoursesPage() {
                                             Enquire Now
                                         </Link>
                                     </div>
-                                </motion.div>
+                                </article>
                             ))}
                         </div>
                     </div>

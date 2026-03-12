@@ -25,7 +25,7 @@ export default function AboutPage() {
                         className="max-w-xl"
                     >
                         <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-white leading-tight mb-6">
-                            About Meezan Educational Institute
+                            About Meezan Educational Institute Hyderabad
                         </h1>
                         <p className="text-lg text-white/80 leading-relaxed border-l-4 border-brand-teal pl-4">
                             Encourage to Educate to Empower — Building careers, transforming lives, and serving communities since our founding in Hyderabad.
@@ -41,10 +41,11 @@ export default function AboutPage() {
                     >
                         <Image
                             src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80"
-                            alt="Group of educators and students collaborating"
+                            alt="Group of educators and students collaborating at Meezan Educational Institute Hyderabad"
                             fill
                             className="object-cover"
-                            priority
+                            priority={true}
+                            sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-brand-deeper-teal via-transparent to-transparent lg:hidden" />
                         <div className="absolute inset-0 bg-gradient-to-r from-brand-deeper-teal via-transparent to-transparent hidden lg:block w-32 left-0" />
@@ -53,7 +54,7 @@ export default function AboutPage() {
             </section>
 
             {/* OUR STORY */}
-            <section className="py-20 lg:py-32 bg-white">
+            <section className="py-20 lg:py-32 bg-white" aria-labelledby="about-story-heading">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -61,7 +62,7 @@ export default function AboutPage() {
                         viewport={{ once: true, margin: "-100px" }}
                         className="w-full lg:w-1/2"
                     >
-                        <h2 className="mb-6 text-3xl lg:text-4xl">Our Story</h2>
+                        <h2 id="about-story-heading" className="mb-6 text-3xl lg:text-4xl">Our Story</h2>
                         <div className="space-y-6 text-foreground/80 leading-relaxed text-lg">
                             <p>
                                 Meezan Educational Institute was founded with a singular mission — to empower individuals through quality education, professional training, and compassionate healthcare.
@@ -83,9 +84,10 @@ export default function AboutPage() {
                         <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
                             <Image
                                 src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80"
-                                alt="Mentor with students"
+                                alt="Mentor with students at Meezan Educational Institute Hyderabad"
                                 fill
                                 loading="lazy"
+                                priority={false}
                                 className="object-cover"
                             />
                         </div>
@@ -94,7 +96,7 @@ export default function AboutPage() {
             </section>
 
             {/* MISSION & VISION */}
-            <section className="py-20 bg-brand-light">
+            <section className="py-20 bg-brand-light" aria-label="Mission and Vision">
                 <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -128,9 +130,9 @@ export default function AboutPage() {
             </section>
 
             {/* WHY CHOOSE US - Mini Version */}
-            <section className="py-20 bg-white">
+            <section className="py-20 bg-white" aria-labelledby="about-pillars-heading">
                 <div className="max-w-7xl mx-auto px-4">
-                    <h2 className="text-center mb-16 text-3xl">Our Core Pillars</h2>
+                    <h2 id="about-pillars-heading" className="text-center mb-16 text-3xl">Our Core Pillars</h2>
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
                             { icon: GraduationCap, title: "Expert Faculty" },
@@ -157,23 +159,24 @@ export default function AboutPage() {
             </section>
 
             {/* CLINIC SECTION */}
-            <section className="py-24 bg-gradient-to-b from-brand-light to-white">
+            <section className="py-24 bg-gradient-to-b from-brand-light to-white" aria-labelledby="about-clinic-heading">
                 <div className="max-w-5xl mx-auto px-4 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="mb-4 text-3xl md:text-4xl text-brand-teal">Shoukath Ali Charitable Clinic</h2>
+                        <h2 id="about-clinic-heading" className="mb-4 text-3xl md:text-4xl text-brand-teal">Shoukath Ali Charitable Clinic</h2>
                         <p className="text-brand-accent text-sm font-semibold tracking-widest uppercase mb-10">
                             Our Commitment to the Community
                         </p>
                         <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl mb-12">
                             <Image
                                 src="https://images.unsplash.com/photo-1542884748-2b87b00f3652?auto=format&fit=crop&q=80"
-                                alt="Charitable Clinic"
+                                alt="Shoukath Ali Charitable Clinic by Meezan Educational Institute Hyderabad"
                                 fill
                                 loading="lazy"
+                                priority={false}
                                 className="object-cover"
                             />
                         </div>
@@ -190,9 +193,9 @@ export default function AboutPage() {
             </section>
 
             {/* TEAM SECTION */}
-            <section className="py-24 bg-white border-t border-border">
+            <section className="py-24 bg-white border-t border-border" aria-labelledby="about-team-heading">
                 <div className="max-w-7xl mx-auto px-4">
-                    <h2 className="text-center mb-16 text-3xl md:text-4xl">Our Leadership</h2>
+                    <h2 id="about-team-heading" className="text-center mb-16 text-3xl md:text-4xl">Our Leadership</h2>
                     <div className="grid md:grid-cols-3 gap-8">
                         {team.map((member, i) => (
                             <motion.div
@@ -206,9 +209,10 @@ export default function AboutPage() {
                                 <div className="aspect-[4/5] relative overflow-hidden">
                                     <Image
                                         src={member.img}
-                                        alt={member.name}
+                                        alt={`${member.name} - ${member.role} at Meezan Educational Institute Hyderabad`}
                                         fill
                                         loading="lazy"
+                                        priority={false}
                                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                                     />
                                 </div>

@@ -45,7 +45,7 @@ export default function ITCoursesSection() {
     };
 
     return (
-        <section className="py-12 md:py-16 lg:py-20 bg-white" id="it-long">
+        <section className="py-12 md:py-16 lg:py-20 bg-white" id="it-long" aria-labelledby="it-courses-heading">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <motion.div
@@ -55,7 +55,7 @@ export default function ITCoursesSection() {
                     className="mb-12"
                 >
                     <div className="flex items-center gap-4 mb-4">
-                        <h2 className="text-3xl lg:text-4xl">Long Term IT Courses</h2>
+                        <h2 id="it-courses-heading" className="text-3xl lg:text-4xl">Long Term IT Courses</h2>
                         <div className="h-0.5 flex-1 bg-gradient-to-r from-border to-transparent hidden sm:block" />
                     </div>
                 </motion.div>
@@ -68,18 +68,19 @@ export default function ITCoursesSection() {
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
                 >
                     {longTermCourses.map((course) => (
-                        <motion.div
+                        <article
                             key={course.title}
-                            variants={itemVariants}
                             className="bg-white border text-left border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col"
                         >
                             <div className="relative h-40 overflow-hidden w-full">
                                 <Image
                                     src={course.image}
-                                    alt={course.title}
-                                    fill
-                                    loading="lazy"
+                                    alt={`${course.title} course at Meezan Educational Institute Hyderabad`}
+                                    width={400}
+                                    height={160}
                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy"
+                                    priority={false}
                                 />
                             </div>
                             <div className="p-6 flex flex-col flex-1">
@@ -98,7 +99,7 @@ export default function ITCoursesSection() {
                                     Enquire <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
                                 </Link>
                             </div>
-                        </motion.div>
+                        </article>
                     ))}
                 </motion.div>
 

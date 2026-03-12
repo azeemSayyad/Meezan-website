@@ -57,7 +57,7 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop/Tablet Nav */}
-                <nav className="hidden md:flex items-center gap-4 lg:gap-8">
+                <nav aria-label="Main navigation" className="hidden md:flex items-center gap-4 lg:gap-8">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
@@ -96,7 +96,9 @@ export default function Navbar() {
                 <button
                     className="md:hidden text-brand-deeper-teal p-2 z-50 hover:text-brand-teal transition-colors"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    aria-label="Toggle menu"
+                    aria-label="Open navigation menu"
+                    aria-expanded={mobileMenuOpen}
+                    aria-controls="mobile-menu"
                 >
                     {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -106,13 +108,14 @@ export default function Navbar() {
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.div
+                        id="mobile-menu"
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="absolute top-full left-0 right-0 w-full bg-white z-50 md:hidden border-t border-black/5 shadow-2xl overflow-y-auto max-h-[calc(100vh-80px)]"
                     >
-                        <nav className="flex flex-col gap-1 p-6">
+                        <nav aria-label="Mobile navigation" className="flex flex-col gap-1 p-6">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}

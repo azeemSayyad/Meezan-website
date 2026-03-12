@@ -41,11 +41,11 @@ export default function HeroSection() {
                     </motion.div>
 
                     <motion.h1 variants={itemVariants} className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-6">
-                        Encourage to Educate to Empower
+                        Healthcare & Coaching Training Institute in Hyderabad
                     </motion.h1>
 
                     <motion.p variants={itemVariants} className="text-base md:text-lg text-white/80 leading-relaxed mb-10 max-w-xl">
-                        From paramedical sciences to personality development and cutting-edge IT skills — Meezan Educational Institute is where careers are built and lives are transformed.
+                        Encourage to Educate to Empower — From paramedical sciences to personality development and cutting-edge IT skills, building careers and transforming lives.
                     </motion.p>
 
                     <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -90,10 +90,11 @@ export default function HeroSection() {
                 >
                     <Image
                         src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&q=80"
-                        alt="Confident mentor conducting a class at Meezan Educational Institute"
+                        alt="Confident mentor conducting a healthcare training class at Meezan Educational Institute Hyderabad"
                         fill
                         className="object-cover object-center"
-                        priority
+                        priority={true}
+                        sizes="(max-width: 768px) 100vw, 45vw"
                     />
                     {/* Gradient transition for mobile */}
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-deeper-teal via-transparent to-transparent lg:hidden" />

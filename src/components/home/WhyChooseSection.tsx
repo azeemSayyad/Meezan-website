@@ -28,7 +28,7 @@ const features = [
 
 export default function WhyChooseSection() {
     return (
-        <section className="py-12 md:py-16 lg:py-20 bg-brand-light overflow-hidden">
+        <section className="py-12 md:py-16 lg:py-20 bg-brand-light overflow-hidden" aria-labelledby="why-choose-heading">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -37,7 +37,7 @@ export default function WhyChooseSection() {
                     transition={{ duration: 0.5 }}
                     className="text-center max-w-3xl mx-auto mb-16"
                 >
-                    <h2 className="mb-4">Why Students Choose Meezan</h2>
+                    <h2 id="why-choose-heading" className="mb-4">Why Students Choose Meezan</h2>
                     <p className="text-lg text-foreground/70">
                         We don't just teach — we transform. Our proven methodologies deliver real results.
                     </p>

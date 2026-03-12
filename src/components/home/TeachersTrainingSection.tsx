@@ -22,7 +22,7 @@ const programmes = [
 
 export default function TeachersTrainingSection() {
     return (
-        <section className="py-24 bg-white overflow-hidden">
+        <section className="py-24 bg-white overflow-hidden" aria-labelledby="teachers-training-heading">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ export default function TeachersTrainingSection() {
                     transition={{ duration: 0.5 }}
                     className="mb-12 md:mb-16 md:text-center max-w-3xl md:mx-auto"
                 >
-                    <h2 className="mb-4 text-2xl md:text-3xl lg:text-4xl">Teacher's Training Programmes</h2>
+                    <h2 id="teachers-training-heading" className="mb-4 text-2xl md:text-3xl lg:text-4xl">Teacher's Training Programmes</h2>
                     <p className="text-base md:text-lg text-foreground/70">
                         Shaping the educators who shape the future. Join our comprehensive training modules designed for modern educational needs.
                     </p>

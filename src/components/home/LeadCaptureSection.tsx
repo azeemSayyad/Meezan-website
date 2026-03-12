@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function LeadCaptureSection() {
     return (
-        <section className="py-20 bg-gradient-to-r from-brand-teal to-brand-dark-teal text-white">
+        <section className="py-20 bg-gradient-to-r from-brand-teal to-brand-dark-teal text-white" aria-labelledby="lead-capture-heading">
             <div className="max-w-4xl mx-auto px-4 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -12,7 +12,7 @@ export default function LeadCaptureSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h2 className="text-white text-3xl md:text-5xl mb-4">Ready to Take the First Step?</h2>
+                    <h2 id="lead-capture-heading" className="text-white text-3xl md:text-5xl mb-4">Ready to Take the First Step?</h2>
                     <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
                         Book a free 30-minute consultation with our experts today. No commitment required.
                     </p>

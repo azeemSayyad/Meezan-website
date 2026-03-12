@@ -71,7 +71,7 @@ export default function CategoriesSection() {
     };
 
     return (
-        <section className="py-12 md:py-16 lg:py-20 bg-white">
+        <section className="py-12 md:py-16 lg:py-20 bg-white" aria-labelledby="categories-heading">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -80,7 +80,7 @@ export default function CategoriesSection() {
                     transition={{ duration: 0.5 }}
                     className="text-center max-w-3xl mx-auto mb-16"
                 >
-                    <h2 className="mb-4">Courses Offered at Meezan Institute</h2>
+                    <h2 id="categories-heading" className="mb-4">Courses Offered at Meezan Institute</h2>
                     <p className="text-lg text-foreground/70">
                         Choose from a wide range of professional programmes designed to launch and accelerate your career.
                     </p>
@@ -94,9 +94,8 @@ export default function CategoriesSection() {
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
                     {categories.map((category) => (
-                        <motion.div
+                        <article
                             key={category.title}
-                            variants={cardVariants}
                             className="bg-white rounded-2xl border border-border overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col h-full"
                         >
                             <div className="relative h-48 w-full overflow-hidden">
@@ -105,7 +104,7 @@ export default function CategoriesSection() {
                                 </div>
                                 <Image
                                     src={category.image}
-                                    alt={category.title}
+                                    alt={`${category.title} services at Meezan Educational Institute Hyderabad`}
                                     fill
                                     loading="lazy"
                                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -137,7 +136,7 @@ export default function CategoriesSection() {
                                     <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
                                 </Link>
                             </div>
-                        </motion.div>
+                        </article>
                     ))}
                 </motion.div>
             </div>

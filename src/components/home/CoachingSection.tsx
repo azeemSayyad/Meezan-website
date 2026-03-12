@@ -28,7 +28,7 @@ export default function CoachingSection() {
     };
 
     return (
-        <section className="py-12 md:py-16 lg:py-20 bg-brand-light relative overflow-hidden">
+        <section className="py-12 md:py-16 lg:py-20 bg-brand-light relative overflow-hidden" aria-labelledby="coaching-heading">
             {/* Abstract Background Shapes */}
             <div className="absolute top-20 left-10 w-64 h-64 bg-brand-teal/5 rounded-full blur-[80px]" />
             <div className="absolute bottom-10 right-10 w-96 h-96 bg-brand-deeper-teal/5 rounded-full blur-[100px]" />
@@ -41,7 +41,7 @@ export default function CoachingSection() {
                     transition={{ duration: 0.5 }}
                     className="text-center max-w-2xl mx-auto mb-16"
                 >
-                    <h2 className="mb-4">Discover Coaching at Meezan</h2>
+                    <h2 id="coaching-heading" className="mb-4">Discover Coaching at Meezan</h2>
                     <p className="text-lg text-foreground/70">
                         Personal coaching that creates real, lasting change. Unlock your potential with our intensive 1-on-1 and group coaching programs.
                     </p>

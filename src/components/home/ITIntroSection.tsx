@@ -6,7 +6,7 @@ import { BarChart3, Bot, PieChart, LayoutDashboard } from "lucide-react";
 
 export default function ITIntroSection() {
     return (
-        <section className="relative py-24 bg-brand-deeper-teal overflow-hidden">
+        <section className="relative py-24 bg-brand-deeper-teal overflow-hidden" aria-labelledby="it-intro-heading">
             {/* Background Grid Pattern */}
             <div
                 className="absolute inset-0 opacity-10"
@@ -30,7 +30,7 @@ export default function ITIntroSection() {
                     <div className="inline-block bg-brand-teal/20 border border-brand-teal/30 px-4 py-1.5 rounded-full mb-6 text-brand-teal text-sm font-semibold uppercase tracking-wider">
                         Powered by TurnkeyBS
                     </div>
-                    <h2 className="text-4xl md:text-5xl lg:text-[52px] font-bold text-white leading-tight mb-6">
+                    <h2 id="it-intro-heading" className="text-4xl md:text-5xl lg:text-[52px] font-bold text-white leading-tight mb-6">
                         Transform Your Career with Technology
                     </h2>
                     <p className="text-lg text-white/80 leading-relaxed mb-10 max-w-xl">
