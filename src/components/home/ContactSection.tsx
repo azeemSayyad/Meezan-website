@@ -98,10 +98,10 @@ function ContactSectionInner() {
     };
 
     return (
-        <section className="py-24 bg-white" id="contact" aria-labelledby="contact-heading">
+        <section className="py-12 md:py-16 bg-white" id="contact" aria-labelledby="contact-heading">
             <div id="enquiry-form" className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
 
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
 
                     {/* Left Column (Info & Map) */}
                     <motion.div
@@ -111,9 +111,9 @@ function ContactSectionInner() {
                         transition={{ duration: 0.5 }}
                     >
                         <h2 id="contact-heading" className="mb-4 text-2xl md:text-3xl lg:text-4xl text-brand-deeper-teal">Get In Touch</h2>
-                        <p className="text-foreground/70 text-base md:text-lg mb-10">We're here to answer your questions and help you build your future. Reach out to us today.</p>
+                        <p className="text-foreground/70 text-base md:text-lg mb-8">We're here to answer your questions and help you build your future. Reach out to us today.</p>
 
-                        <address className="not-italic space-y-8 mb-10">
+                        <address className="not-italic space-y-6 mb-8">
                             <div className="flex gap-4">
                                 <div className="bg-brand-light p-3 rounded-full text-brand-teal h-fit shrink-0">
                                     <MapPin size={24} />
@@ -165,13 +165,13 @@ function ContactSectionInner() {
                         transition={{ duration: 0.5 }}
                     >
                         <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-black/5 relative overflow-hidden">
-                            <h3 className="text-xl md:text-2xl mb-8 text-brand-deeper-teal">Send Us a Message</h3>
+                            <h3 className="text-xl md:text-2xl mb-6 text-brand-deeper-teal">Send Us a Message</h3>
 
                             {isSubmitted ? (
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
-                                    className="flex flex-col items-center justify-center py-20 text-center"
+                                    className="flex flex-col items-center justify-center py-12 text-center"
                                 >
                                     <div className="bg-green-100 text-green-600 p-4 rounded-full mb-4">
                                         <CheckCircle2 size={48} />
@@ -241,7 +241,7 @@ function ContactSectionInner() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="mt-16 w-full h-[400px] rounded-3xl overflow-hidden shadow-md border border-border bg-brand-light"
+                    className="mt-12 w-full h-[350px] rounded-3xl overflow-hidden shadow-md border border-border bg-brand-light"
                 >
                     <iframe
                         src="https://www.google.com/maps?q=Dorato+Avenue,+Hyderabad,+Telangana,+India&output=embed"

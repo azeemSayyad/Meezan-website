@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function LeadCaptureSection() {
     return (
-        <section className="py-20 bg-gradient-to-r from-brand-teal to-brand-dark-teal text-white" aria-labelledby="lead-capture-heading">
+        <section className="py-12 md:py-16 bg-gradient-to-r from-brand-teal to-brand-dark-teal text-white" aria-labelledby="lead-capture-heading">
             <div className="max-w-4xl mx-auto px-4 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

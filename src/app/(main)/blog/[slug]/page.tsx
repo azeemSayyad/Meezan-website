@@ -82,7 +82,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </div>
 
             {/* ARTICLE BODY */}
-            <div className="max-w-3xl mx-auto px-4 py-16 lg:py-24 prose prose-lg prose-slate prose-headings:text-brand-deeper-teal prose-a:text-brand-teal prose-img:rounded-2xl">
+            <div className="max-w-3xl mx-auto px-4 py-12 lg:py-16 prose prose-lg prose-slate prose-headings:text-brand-deeper-teal prose-a:text-brand-teal prose-img:rounded-2xl">
 
                 <Link href="/blog" className="inline-flex items-center gap-2 text-brand-teal font-semibold hover:text-brand-dark-teal transition-colors mb-10 no-underline text-sm" aria-label="Back to all blog articles">
                     <ArrowLeft size={16} /> Back to all articles

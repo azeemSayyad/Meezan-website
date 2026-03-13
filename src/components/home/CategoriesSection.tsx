@@ -71,14 +71,14 @@ export default function CategoriesSection() {
     };
 
     return (
-        <section className="py-12 md:py-16 lg:py-20 bg-white" aria-labelledby="categories-heading">
+        <section className="py-8 md:py-12 lg:py-16 bg-white" aria-labelledby="categories-heading">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="text-center max-w-3xl mx-auto mb-16"
+                    className="text-center max-w-3xl mx-auto mb-10 md:mb-12"
                 >
                     <h2 id="categories-heading" className="mb-4">Courses Offered at Meezan Institute</h2>
                     <p className="text-lg text-foreground/70">
@@ -91,7 +91,7 @@ export default function CategoriesSection() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
                 >
                     {categories.map((category) => (
                         <article

@@ -17,7 +17,7 @@ export default function StatsSection() {
     ];
 
     return (
-        <section ref={ref} className="w-full bg-brand-teal py-12 md:py-16" aria-label="Institute Statistics">
+        <section ref={ref} className="w-full bg-brand-teal py-8 md:py-12" aria-label="Institute Statistics">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 text-center divide-x-0 lg:divide-x lg:divide-white/20">
                     {stats.map((stat, i) => (
