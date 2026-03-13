@@ -78,20 +78,21 @@ export default function Navbar() {
         <header
             ref={navRef}
             className={clsx(
-                "sticky top-0 w-full z-40 transition-all duration-300",
-                isScrolled ? "bg-white shadow-md py-3" : "bg-white/95 backdrop-blur-sm py-5"
+                "sticky top-0 w-full z-40 h-16 flex items-center transition-all duration-300",
+                isScrolled ? "bg-white shadow-md border-b border-border/50" : "bg-white/95 backdrop-blur-sm"
             )}
         >
             <div className="max-w-7xl mx-auto px-4 flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-8">
                 <div className="flex justify-start">
-                    <Link href="/" className="flex items-center gap-1 z-50">
-                        <div className="bg-white rounded-lg px-2 py-1 shadow-sm">
-                            <div className="relative w-[100px] h-8 sm:h-10 lg:w-[120px] lg:h-[45px] xl:w-[160px] xl:h-[60px]">
+                    <Link href="/" className="flex items-center z-50">
+                        <div className="bg-white rounded-lg px-2 shadow-sm flex items-center justify-center">
+                            <div className="relative h-[40px] w-[140px] flex items-center">
+                                {/* Next/Image needs width/height or fill. We use fill with object-contain to let it scale down to max-height */}
                                 <Image
                                     src="/images/meezan-logo.png"
                                     alt="Meezan Educational Institute"
                                     fill
-                                    className="object-contain max-h-8 sm:max-h-12"
+                                    className="object-contain object-left max-h-[40px] w-auto"
                                     priority
                                 />
                             </div>
