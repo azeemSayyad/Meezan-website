@@ -26,19 +26,19 @@ export default function BlogPage() {
                 { name: 'Blog', url: '/blog' }
             ]} />
             {/* HERO */}
-            <section className="bg-brand-light pt-24 pb-12 md:pb-16 px-4 sm:px-6 lg:px-8">
+            <section className="bg-brand-light pt-8 pb-6 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-deeper-teal mb-6">Healthcare & Education Blog — Meezan Institute</h1>
-                    <p className="text-base md:text-lg text-foreground/70 max-w-2xl mb-8">
+                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-deeper-teal mb-3">Healthcare & Education Blog — Meezan Institute</h1>
+                    <p className="text-sm md:text-base text-foreground/70 max-w-2xl mb-6">
                         Stay informed with the latest thought leadership, course news, and career advice from Meezan Educational Institute.
                     </p>
 
-                    <div className="relative w-full max-w-xl">
-                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-foreground/40" size={20} />
+                    <div className="relative w-full max-w-lg">
+                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-foreground/40" size={18} />
                         <input
                             type="text"
                             placeholder="Search articles, topics or categories..."
-                            className="w-full pl-12 pr-4 py-4 rounded-full border border-border bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-teal/50 transition-all font-sans text-sm md:text-base"
+                            className="w-full pl-10 pr-4 py-3 rounded-full border border-border bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-teal/50 transition-all font-sans text-sm"
                         />
                     </div>
                 </div>
