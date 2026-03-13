@@ -82,23 +82,25 @@ export default function Navbar() {
                 isScrolled ? "bg-white shadow-md border-b border-border/50" : "bg-white/95 backdrop-blur-sm"
             )}
         >
-            <div className="max-w-7xl mx-auto px-4 flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-8">
+            <div className="max-w-7xl mx-auto px-4 w-full flex items-center justify-between gap-4 lg:gap-8">
                 <div className="flex justify-start">
                     <Link href="/" className="flex items-center z-50">
-                        <div className="relative h-[40px] w-[140px] flex items-center">
-                            <Image
-                                src="/images/meezan-logo.png"
-                                alt="Meezan Educational Institute"
-                                fill
-                                className="object-contain object-left max-h-[40px] w-auto"
-                                priority
-                            />
+                        <div className="bg-white rounded-lg px-2 shadow-sm flex items-center justify-center">
+                            <div className="relative h-[40px] w-[140px] flex items-center">
+                                {/* Next/Image needs width/height or fill. We use fill with object-contain to let it scale down to max-height */}
+                                <Image
+                                    src="/images/meezan-logo.png"
+                                    alt="Meezan Educational Institute"
+                                    fill
+                                    className="object-contain object-left max-h-[40px] w-auto"
+                                    priority
+                                />
+                            </div>
                         </div>
                     </Link>
                 </div>
 
-                {/* Desktop/Tablet Nav */}
-                <nav aria-label="Main navigation" className="hidden lg:flex items-center justify-center gap-6 xl:gap-10">
+                <nav aria-label="Main navigation" className="hidden lg:flex flex-1 items-center justify-center gap-6 xl:gap-10">
                     {navLinks.map((link) => {
                         if (link.name === "Courses") {
                             return (
@@ -155,7 +157,7 @@ export default function Navbar() {
                     })}
                 </nav>
 
-                <div className="flex justify-end">
+                <div className="flex justify-end w-[140px]">
                     {/* Mobile Menu Toggle */}
                     <button
                         className="lg:hidden text-brand-deeper-teal p-3 min-w-[44px] min-h-[44px] flex items-center justify-center z-50 hover:text-brand-teal transition-colors"
