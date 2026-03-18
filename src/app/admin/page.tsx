@@ -50,10 +50,21 @@ export default async function AdminPage() {
                 </div>
             </header>
 
-            <main className="container mx-auto px-4 py-8">
-                <div className="mb-8">
-                    <h1 className="text-3xl font-bold tracking-tight text-gray-900">Contact Submissions</h1>
-                    <p className="mt-2 text-gray-600">
+            <main className="container mx-auto px-4 py-8 flex flex-col gap-6">
+                {/* Blog Management Card */}
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <div>
+                        <h2 className="text-lg font-bold text-gray-900 leading-none">Blog Management</h2>
+                        <p className="mt-1 text-sm text-gray-600">Create, edit, publish, and manage all your website's journal posts.</p>
+                    </div>
+                    <Link href="/admin/blogs" className="mt-3 sm:mt-0 bg-black text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors shadow-sm">
+                        Manage Blogs
+                    </Link>
+                </div>
+
+                <div className="mb-2">
+                    <h1 className="text-2xl font-bold tracking-tight text-gray-900">Contact Submissions</h1>
+                    <p className="mt-1 text-sm text-gray-600">
                         Manage all leads from the contact forms. Total: {submissions.length}
                     </p>
                 </div>

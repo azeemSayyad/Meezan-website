@@ -25,3 +25,37 @@ model ContactSubmission {
 
   @@map("contact_submissions")
 }
+
+model Blog {
+  id               String   @id @default(cuid())
+  title            String
+  slug             String   @unique
+  shortDescription String?
+  content          String   @db.Text
+  
+  // SEO Fields
+  metaTitle        String?
+  metaDescription  String?
+  keywords         String[]
+  canonicalUrl     String?
+  ogTitle          String?
+  ogDescription    String?
+  ogImage          String?
+  
+  // Media
+  featuredImage    String?
+  
+  // Categorization
+  category         String?
+  tags             String[]
+  
+  // Publishing
+  status           String   @default("draft") // 'draft' or 'published'
+  publishDate      DateTime?
+  author           String?
+  
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@map("blogs")
+}

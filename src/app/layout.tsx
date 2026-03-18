@@ -5,6 +5,7 @@ import "./globals.css";
 
 import { Analytics } from "@vercel/analytics/react";
 import { LocalBusinessSchema } from "@/components/global/SchemaOrg";
+import { Toaster } from 'sonner';
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -37,6 +38,7 @@ export default function RootLayout({
       </head>
       <body className={`${poppins.variable} font-sans antialiased text-foreground bg-background selection:bg-brand-teal/20 selection:text-brand-deeper-teal overflow-x-hidden flex flex-col min-h-screen`}>
         {children}
+        <Toaster position="top-right" richColors />
         <Analytics />
       </body>
     </html>

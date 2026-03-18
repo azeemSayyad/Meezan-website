@@ -13,11 +13,25 @@ export const metadata: Metadata = {
 }
 
 // Removing local blogPosts array and using imported one instead
+import { getPublishedBlogs } from "@/app/actions/blog-actions";
+import { format } from "date-fns";
 
+export default async function BlogPage() {
+    const publishedBlogs = await getPublishedBlogs();
 
-export default function BlogPage() {
-    const featuredPost = blogPosts[0];
-    const gridPosts = blogPosts.slice(1);
+    if (publishedBlogs.length === 0) {
+        return (
+            <div className="w-full bg-brand-light pb-24 text-center">
+                <section className="bg-brand-light pt-8 pb-6 px-4">
+                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-deeper-teal mb-3">Blog</h1>
+                    <p className="mt-12 text-foreground/60 text-lg">No published articles yet. Please check back later!</p>
+                </section>
+            </div>
+        );
+    }
+
+    const featuredPost = publishedBlogs[0];
+    const gridPosts = publishedBlogs.slice(1);
 
     return (
         <div className="w-full bg-brand-light pb-24">
@@ -48,30 +62,32 @@ export default function BlogPage() {
                 {/* FEATURED POST */}
                 <Link href={`/blog/${featuredPost.slug}`} className="block group mb-8 md:mb-10">
                     <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-border group-hover:shadow-xl transition-all duration-300 flex flex-col lg:flex-row">
-                        <div className="w-full lg:w-3/5 h-[250px] sm:h-[350px] lg:h-[450px] relative overflow-hidden">
-                            <Image
-                                src={featuredPost.image}
-                                alt={`Featured post: ${featuredPost.title}`}
-                                fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                priority={true}
-                                sizes="(max-width: 1024px) 100vw, 60vw"
-                            />
+                        <div className="w-full lg:w-3/5 h-[250px] sm:h-[350px] lg:h-[450px] relative overflow-hidden bg-gray-100">
+                            {featuredPost.featuredImage && (
+                                <Image
+                                    src={featuredPost.featuredImage}
+                                    alt={`Featured post: ${featuredPost.title}`}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                    priority={true}
+                                    sizes="(max-width: 1024px) 100vw, 60vw"
+                                />
+                            )}
                         </div>
                         <div className="w-full lg:w-2/5 p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
                             <span className="bg-brand-accent/20 text-brand-deeper-teal font-bold tracking-wider text-[10px] md:text-xs px-3 py-1.5 rounded-md uppercase w-fit mb-4 md:mb-6">
-                                Featured • {featuredPost.category}
+                                Featured • {featuredPost.category || 'Article'}
                             </span>
                             <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-brand-deeper-teal mb-4 md:mb-6 group-hover:text-brand-teal transition-colors leading-tight">
                                 {featuredPost.title}
                             </h2>
                             <p className="text-foreground/70 text-base md:text-lg mb-4 md:mb-6 leading-relaxed line-clamp-3 md:line-clamp-none">
-                                {featuredPost.excerpt}
+                                {featuredPost.shortDescription || 'Read full article to learn more.'}
                             </p>
 
                             <div className="flex items-center gap-6 mt-auto">
-                                <span className="flex items-center gap-2 text-xs md:text-sm font-medium text-foreground/60"><Calendar size={16} /> {featuredPost.date}</span>
-                                <span className="flex items-center gap-2 text-xs md:text-sm font-medium text-foreground/60"><Clock size={16} /> {featuredPost.readTime}</span>
+                                <span className="flex items-center gap-2 text-xs md:text-sm font-medium text-foreground/60"><Calendar size={16} /> {featuredPost.publishDate ? format(new Date(featuredPost.publishDate), 'MMMM d, yyyy') : format(new Date(featuredPost.createdAt), 'MMMM d, yyyy')}</span>
+                                <span className="flex items-center gap-2 text-xs md:text-sm font-medium text-foreground/60"><Clock size={16} /> 5 Min Read</span>
                             </div>
                         </div>
                     </div>
@@ -79,34 +95,36 @@ export default function BlogPage() {
 
                 {/* GRID */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {gridPosts.map((post) => (
+                    {gridPosts.map((post: any) => (
                         <Link href={`/blog/${post.slug}`} key={post.slug} className="group flex flex-col h-full">
                             <article className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border group-hover:shadow-lg transition-all duration-300 flex flex-col flex-1">
-                                <div className="relative h-48 sm:h-56 w-full overflow-hidden">
+                                <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-gray-100">
                                     <span className="absolute top-4 left-4 z-10 bg-brand-accent text-brand-deeper-teal font-bold tracking-wide text-[10px] px-3 py-1 rounded-md shadow-sm uppercase">
-                                        {post.category}
+                                        {post.category || 'Article'}
                                     </span>
-                                    <Image
-                                        src={post.image}
-                                        alt={post.title}
-                                        fill
-                                        loading="lazy"
-                                        priority={false}
-                                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                    />
+                                    {post.featuredImage && (
+                                        <Image
+                                            src={post.featuredImage}
+                                            alt={post.title}
+                                            fill
+                                            loading="lazy"
+                                            priority={false}
+                                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        />
+                                    )}
                                 </div>
                                 <div className="p-6 md:p-8 flex flex-col flex-1">
                                     <h3 className="text-xl font-bold text-brand-deeper-teal mb-3 leading-snug group-hover:text-brand-teal transition-colors line-clamp-2">
                                         {post.title}
                                     </h3>
                                     <p className="text-foreground/70 text-sm leading-relaxed mb-6 line-clamp-3">
-                                        {post.excerpt}
+                                        {post.shortDescription || 'Read more...'}
                                     </p>
 
                                     <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/50">
                                         <div className="flex items-center gap-4">
-                                            <span className="text-xs font-medium text-foreground/50">{post.date}</span>
+                                            <span className="text-xs font-medium text-foreground/50">{post.publishDate ? format(new Date(post.publishDate), 'MMM d, yyyy') : format(new Date(post.createdAt), 'MMM d, yyyy')}</span>
                                         </div>
                                         <span className="text-brand-teal font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
                                             Read More <ArrowRight size={14} />
