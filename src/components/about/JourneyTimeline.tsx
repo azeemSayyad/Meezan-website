@@ -5,46 +5,34 @@ import { motion } from "framer-motion";
 // TODO: Replace placeholder milestone data with real data from client form response
 const milestones = [
   {
-    year: "2004",
-    label: "The Beginning",
-    title: "Meezan Educational Institute Founded",
-    description: "Founded in Hyderabad with a singular mission — to provide quality education and professional training to underserved communities.",
+    year: "2002",
+    label: "FOUNDATION",
+    title: "Meezan Educational Society Founded",
+    description: "Meezan Educational Society was founded with a mission to empower and enrich a generation of students through student empowerment programs for underprivileged children.",
   },
   {
-    year: "2008",
-    label: "Healthcare Initiative",
-    title: "Shoukath Ali Charitable Clinic Established",
-    description: "Launched the charitable clinic to extend Meezan's mission beyond education into direct community healthcare service.",
+    year: "2005 - 2010",
+    label: "TEACHER EMPOWERMENT",
+    title: "Train the Trainer Program",
+    description: "Launched the Train the Trainer program to enhance teachers’ skills and teaching experiences, with the slogan “Reach the Unreachable.” Impact extended to schools across Hyderabad.",
   },
   {
-    year: "2012",
-    label: "Growing Reach",
-    title: "Paramedical Sciences Programme Launched",
-    description: "Introduced the flagship paramedical and health services programme, training students for real careers in India's growing healthcare sector.",
+    year: "2010 - 2015",
+    label: "LIFE SKILLS & AWARENESS",
+    title: "Life Skills Courses & 4H Principles",
+    description: "Introduced Life Skills courses and programs for both teachers and students, focusing on developing the 4H principles: Head, Heart, and Handthinking. In collaboration with Safa Baitul Maal in Hyderabad, we promoted education awareness, enrolment, and training.",
   },
   {
-    year: "2016",
-    label: "Teacher Training",
-    title: "ECCE & Teacher Training Programmes Begin",
-    description: "Expanded into teacher education — ECCE, ASD, Life Skills and ADHD programmes — certifying educators who shape the next generation.",
+    year: "2015 - 2020",
+    label: "PROFESSIONAL TRAINING",
+    title: "RUN Program & Govt Recognition",
+    description: "Received government recognition and introduced the RUN Program (Reskill, Upskill, NewSkill) to prepare early career professionals. Also launched the Pre-Primary Teachers Training Certification (PPTTC) and retail management courses.",
   },
   {
-    year: "2020",
-    label: "Partnership",
-    title: "Seed USA Partnership Formalised",
-    description: "Formalised our partnership with Seed USA, enabling continued free education for students who cannot afford tuition.",
-  },
-  {
-    year: "2024",
-    label: "500+ Lives",
-    title: "500+ Students Trained Across All Programmes",
-    description: "Crossed a significant milestone — over 500 students have now completed their training and gone on to careers and community impact.",
-  },
-  {
-    year: "2026",
-    label: "Today",
-    title: "Continuing the Mission",
-    description: "Meezan continues to grow — new courses, a digital presence, and an unwavering commitment to Encourage, Educate, and Empower.",
+    year: "2020 - 2025",
+    label: "WOMEN EMPOWERMENT",
+    title: "Self-Reliance Through Education",
+    description: "Began focusing on Women Empowerment Passion programs, such as ECCE, Paramedics, and Psychology, to foster self-reliance in women.",
   },
 ];
 
@@ -77,9 +65,9 @@ export default function JourneyTimeline() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="absolute bottom-0 left-0 leading-none pointer-events-none select-none z-0"
+                  className="absolute bottom-0 left-0 leading-none pointer-events-none select-none z-0 whitespace-nowrap"
                   style={{
-                    fontSize: "120px",
+                    fontSize: milestone.year.includes("-") ? "80px" : "120px",
                     fontWeight: 900,
                     color: "#E8F8F9",
                     transform: "translateY(15%)", 
@@ -117,10 +105,10 @@ export default function JourneyTimeline() {
                       {milestone.year}
                     </div>
 
-                    <h3 className="text-[18px] font-bold text-[#1A1A2E] mt-2">
+                    <h3 className="text-[18px] sm:text-[20px] font-bold text-[#1A1A2E] mt-2 group-hover:text-[#29B8C1] transition-colors duration-300">
                       {milestone.title}
                     </h3>
-                    <p className="text-[15px] text-[#5A5A72] mt-2 leading-[1.6]">
+                    <p className="text-sm sm:text-base text-[#5A5A72] mt-3 leading-[1.6] sm:leading-[1.7]">
                       {milestone.description}
                     </p>
                  </motion.div>

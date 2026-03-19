@@ -10,10 +10,10 @@ export default function StatsSection() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     const stats = [
-        { value: 500, suffix: "+", label: "Students Enrolled" },
+        { value: 12500, suffix: "+", label: "Students Trained & Certified" },
         { value: 20, suffix: "+", label: "Courses Offered" },
-        { value: 5, suffix: "+", label: "Years of Excellence" },
-        { value: 98, suffix: "%", label: "Student Satisfaction" },
+        { value: 24, suffix: "+", label: "Years of Excellence" },
+        { value: 90, suffix: "%", label: "Student Satisfaction" },
     ];
 
     return (
