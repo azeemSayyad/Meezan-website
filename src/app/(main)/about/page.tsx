@@ -63,15 +63,15 @@ export default function AboutPage() {
             <section className="w-full py-6" style={{ backgroundColor: "#0D7A82" }}>
                 <div className="max-w-7xl mx-auto px-4 flex flex-row justify-between divide-x divide-white/20">
                     <div className="flex-1 text-center px-2">
-                        <div className="text-2xl sm:text-3xl font-bold text-white">500+</div>
-                        <div className="text-xs sm:text-sm text-white/75 mt-1">Students Trained</div>
-                    </div>
-                    <div className="flex-1 text-center px-2">
-                        <div className="text-2xl sm:text-3xl font-bold text-white">10+</div>
-                        <div className="text-xs sm:text-sm text-white/75 mt-1">Courses Offered</div>
+                        <div className="text-2xl sm:text-3xl font-bold text-white">10000+</div>
+                        <div className="text-xs sm:text-sm text-white/75 mt-1">Students Certified</div>
                     </div>
                     <div className="flex-1 text-center px-2">
                         <div className="text-2xl sm:text-3xl font-bold text-white">20+</div>
+                        <div className="text-xs sm:text-sm text-white/75 mt-1">Courses Offered</div>
+                    </div>
+                    <div className="flex-1 text-center px-2">
+                        <div className="text-2xl sm:text-3xl font-bold text-white">24+</div>
                         <div className="text-xs sm:text-sm text-white/75 mt-1">Years of Service</div>
                     </div>
                 </div>
@@ -141,23 +141,23 @@ export default function AboutPage() {
                     <h2 id="about-pillars-heading" className="text-center mb-16 text-3xl">Our Core Pillars</h2>
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
-                            { 
-                                icon: GraduationCap, 
+                            {
+                                icon: GraduationCap,
                                 title: "Expert Faculty",
                                 desc: "Taught by experienced professionals with real-world backgrounds in healthcare, education and training."
                             },
-                            { 
-                                icon: ClipboardList, 
+                            {
+                                icon: ClipboardList,
                                 title: "Practical Training",
                                 desc: "Hands-on learning that goes beyond theory — every course is designed around real workplace readiness."
                             },
-                            { 
-                                icon: HeartHandshake, 
+                            {
+                                icon: HeartHandshake,
                                 title: "Holistic Growth",
                                 desc: "We develop the whole person — skills, character, confidence and purpose — not just qualifications."
                             },
-                            { 
-                                icon: BadgeCheck, 
+                            {
+                                icon: BadgeCheck,
                                 title: "Affordable Fees",
                                 desc: "Quality education should be accessible to all. Many of our programmes are free or heavily subsidised."
                             }
@@ -197,7 +197,7 @@ export default function AboutPage() {
                         </p>
                         <div className="relative w-full rounded-xl flex flex-col items-center justify-center mb-12" style={{ backgroundColor: "#0D7A82", height: "320px", borderRadius: "12px" }}>
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-2">
-                                <path d="M12 2v20M2 12h20"/>
+                                <path d="M12 2v20M2 12h20" />
                             </svg>
                             <span style={{ color: "white", fontSize: "14px", opacity: 0.7 }}>Clinic photos coming soon</span>
                         </div>
@@ -232,14 +232,14 @@ export default function AboutPage() {
                             Explore the story of how Meezan grew, meet our leadership team, and see the recognition we have received over the years.
                         </p>
                     </motion.div>
-                    
+
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <Link 
-                            href="/our-journey" 
+                        <Link
+                            href="/our-journey"
                             className="inline-flex items-center justify-center bg-[#29B8C1] text-white px-6 py-3 rounded-lg font-semibold text-[15px] hover:bg-[#0D7A82] transition-colors whitespace-nowrap"
                         >
                             View Our Journey →
